@@ -15,6 +15,7 @@ function App() {
   return (
     <div className="flex flex-col h-screen gap-6 justify-center items-center bg-slate-400">
       <Title />
+      {/* send the function addJoke to the button component via the name retrieveJoke */}
       <Button retrieveJoke={addJoke} />
       <Joke displayJoke={joke} />
     </div>
