@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 function App() {
+  const [joke, setJoke] = useState('');
   async function fetchJoke() {
     const url = 'https://icanhazdadjoke.com/';
     try {
@@ -11,7 +12,7 @@ function App() {
         },
       });
       const data = await response.json();
-      console.log(data);
+      setJoke(data.joke);
     } catch (error) {
       console.error(error);
     }
@@ -20,6 +21,7 @@ function App() {
     <>
       <h1>Joke Generator</h1>
       <button onClick={fetchJoke}>Get Joke</button>
+      <p>{joke}</p>
     </>
   );
 }
