@@ -17,6 +17,7 @@ function App() {
       <Title />
       {/* send the function addJoke to the button component via the name retrieveJoke */}
       <Button retrieveJoke={addJoke} />
+      {/* send the joke state variable as displayJoke to Joke component */}
       <Joke displayJoke={joke} />
     </div>
   );
