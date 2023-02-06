@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import Title from './components/Title';
+
 function App() {
   const [joke, setJoke] = useState('');
   async function fetchJoke() {
@@ -18,11 +20,11 @@ function App() {
     }
   }
   return (
-    <>
-      <h1>Joke Generator</h1>
+    <div className="flex flex-col py-8 gap-6 justify-center items-center">
+      <Title />
       <button onClick={fetchJoke}>Get Joke</button>
       <p>{joke}</p>
-    </>
+    </div>
   );
 }
 
